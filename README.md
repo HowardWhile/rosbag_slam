@@ -10,7 +10,12 @@ sudo apt install ros-kinetic-turtlebot3*
 
 ## 範例
 
-
+```shell
+cd catkin_ws
+catkin_make
+roslaunch rosbag_slam slam.launch 
+```
 
 ## 使用步驟
 
+...
