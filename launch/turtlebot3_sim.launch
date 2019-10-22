@@ -1,0 +1,12 @@
+<launch>
+    <!-- 模擬器 -->
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch"/>
+    <!-- 機械參數 -->
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch"/>
+    <!-- 鍵盤 -->
+    <include file="$(find turtlebot3_teleop)/launch/turtlebot3_teleop_key.launch"/>
+
+    <!-- 模擬器訊號用rviz顯示 -->
+    <node pkg="rviz" type="rviz" name="simulator_info_rviz" required="true" args="-d $(find rosbag_slam)/rviz_config/simulator_info.rviz"></node>
+
+</launch>
