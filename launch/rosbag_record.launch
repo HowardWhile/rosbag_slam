@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="rosbag" type="record" name="bag_recorder" output="screen" args="-O $(find rosbag_slam)/bagfile/record.bag -a -j -x '/camera(.*)|/gazebo(.*)' "/>
+</launch>
