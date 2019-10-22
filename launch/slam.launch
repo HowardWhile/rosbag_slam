@@ -4,8 +4,12 @@
 
     <!-- Gmapping -->
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
-        <param name="lstep" value="0.05"/>
-        <param name="astep" value="0.05"/>
+        <param name="lstep " value="0.1"/>
+        <param name="astep  " value="0.1"/>
+
+        <param name="linearUpdate " value="0.1"/>
+        <param name="angularUpdate  " value="0.1"/>
+
     </node>
 
     <!-- rviz 顯示SLAM訊息 -->
