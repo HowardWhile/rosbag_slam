@@ -1,0 +1,19 @@
+<launch>
+    <param name ="/use_sim_time" value="true"/>
+
+    <!-- 播放bag檔 -->
+    <node pkg="rosbag" type="play" name="bag_recorder" output="screen" args="$(find rosbag_slam)/bagfile/record.bag"/>
+
+    <!-- Gmapping -->
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+        <param name="lstep " value="0.1"/>
+        <param name="astep  " value="0.1"/>
+
+        <param name="linearUpdate " value="0.1"/>
+        <param name="angularUpdate  " value="0.1"/>
+
+    </node>
+
+    <!-- rviz 顯示SLAM訊息 -->
+    <node pkg="rviz" type="rviz" name="simulator_info_rviz" required="true" args="-d $(find rosbag_slam)/rviz_config/slam.rviz"></node>
+</launch>
