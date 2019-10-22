@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="rosbag" type="play" name="bag_recorder" output="screen" args="$(find rosbag_slam)/bagfile/record.bag"/>
+
+    <!-- rosbag的訊息用rviz顯示 -->
+    <node pkg="rviz" type="rviz" name="simulator_info_rviz" required="true" args="-d $(find rosbag_slam)/rviz_config/simulator_info.rviz"></node>
+
+</launch>
